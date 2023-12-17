@@ -62,18 +62,3 @@ class Portfolio:
     
     def get_capital(self):
         return round(self.__capital, 2)
-
-if __name__ == "__main__":
-    portfolio = Portfolio(1000)
-    print(portfolio.get_capital())
-    print(portfolio.get_holdings())
-    portfolio.buy("Tsla", 10, 21)
-    print(portfolio.get_capital())
-    print(portfolio.get_holdings())
-    portfolio.buy("Tsla", 20, 21)
-    print(portfolio.get_capital())
-    print(portfolio.get_holdings())
-    portfolio.sell("Tsla", 20, 21)
-    print(portfolio.get_capital())
-    portfolio.buy("AAPL", 30, 21)
-    print(portfolio)

@@ -102,17 +102,3 @@ class Market:
     
     def get_stocks(self):
         return self.__stocks
-
-if __name__ == "__main__":
-    from returns import high_risk_returns, medium_risk_returns, low_risk_returns
-    x = Market(high_risk_returns, medium_risk_returns, low_risk_returns)
-    x.fill_market( ['AAPL', 'GOOGL', 'MSFT', 'AMZN', 'TSLA', 'META', 'NFLX', 'V', 'JPM', 'GS', 'BA', 'DIS', 'IBM', 'CSCO', 'INTC', 'AMD',   'PYPL', 'NVDA', 'WMT', 'MCD'])
-    stock_data = [("AAPL", "medium"), ("GOOGL", "low"), ("MSFT", "low"), ("AMZN", "medium"), ("TSLA", "high"), ("META", "medium"),  ("NFLX", "high"), ("V", "low"), ("JPM", "medium"), ("GS", "high"), ("BA", "high"), ("DIS", "medium"), ("IBM", "medium"), ("CSCO",    "low"), ("INTC", "low"), ("AMD", "high"), ("PYPL", "medium"), ("NVDA", "high"), ("WMT", "low"), ("MCD", "low")
-    ]
-
-    x.add_risk_level(stock_data)
-    print(x.get_stocks())
-    x.change_prices()
-    x.update_average()
-    print()
-    print(x.get_stocks())

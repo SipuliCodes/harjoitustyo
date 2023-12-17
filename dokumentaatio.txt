@@ -1,0 +1,25 @@
+Harjoitustyö
+
+-ohjeet käyttöön
+Peli käynnistetään suorittamalla main.py tiedosto. Käynnistyksessä kestää hetki, koska ohjelma hakee tietoja. Seuravaaksi kysytään käyttäjänimeä ja sen jälkeen ohjeet tulevat näkyviin.
+
+-työn aihe ja kuvaus
+Aiheena on sijoitus/treidaamis -peli. Pelissä ostetaan ja myydään osakkeita, tavoitteena tienata rahaa. Pelissä on 20 osaketta, jotka kuuluvat eri riskiluokkiin ja näiden hinnat vaihtelevat päivittäin riskin mukaan satunnaisesti. Liukuvien keskiarvojen lähellä on todennäköisempää, että osake laskee tai nousee, riippuen kummalla puolella on. Lisäksi pelissä tulostuu myös uutisia, jotka myöskin joko nostavat osakkeita tai laskevat. Pelin loppuessa tulos tallennettaan tulostaululle ja tulostaulu tulee näkyviin, jossa näkyy sillä tietokoneella 10 parasta pelanutta pelaajaa.
+
+-työn ratkaisuperiaate
+Lähdin ratkaisemaan sillä periaatteella, että mietin vain mitä tarvitsen ja tein osan kerrallaan. Ja lisäsin ominaisuuksia sitä mukaan, kun tuli tarve.
+
+-työn rakenne
+Työssä on luokka Portfolio, joka hoitaa omistettujen osakkeiden säilyttämisen. Sillä on metodit buy ja sell, joilla omistuksia voidaan lisätä ja poistaa. Myös pääoma ja nykyisten omistusten hinta pidetään tiedossa. Luokassa on lisäksi metodit, joilla voi hakea omistukset, pääoman, markkina-arvon ja päivittää nykyisten omistusten hinnan. 
+
+Market luokka säilyttää osakkeita ja tietoja niistä. Luokassa on metodit, jolla voi täyttää markkinan osakkeilla ja lisätä niihin riskitaso. Hintojen ja liukuvien keskiarvojen päivittämiseen on omat metodit ja sitten on support ja resistance, jotka vaikuttavat hintojen muuttumiseen riippuen siitä onko hinta kuinka lähellä liukuvia keskiarvoja. Sitten uutisten hintavaikutukselle on oma metodi ja tietyn osakkeen hinnan tai tietojen hakemiseen. 
+
+Luokka File ja sen lapsiluokat News ja Leaderboard. File:ssa on metodit, jolla voi lukea tiedoston ja kirjoittaa tiedostoon. Lisäksi se säilyttää tiedoston sisällön. News luokkaan on lisätty mahdollisuus hakea tieto yhdeltä riviltä. Leaderboard luokkaan on lisätty dict, jossa säilytetään avaimina käyttäjänimiä ja arvoina tuloksia. Luokassa on metodi, joka käy läpi jo tiedostossa olleet tulokset ja metodilla add lisää ne niitä säilövään dictiin. Sitten on metodi, joka kutsutaan add:ssa ja pitää huolta, että tulokset ovat aina järjestyksessä. Lisäksi on metodi, joka tyhjentää tiedoston ja kirjoittaa tulokset sinne.
+
+Main.py tiedostossa on kaksi funktiota, toinen tyhjentää komentokehotteen kutsuttaessa ja toinen päivittää portfolion omistusten hinnat.
+
+-ulkoiset kirjastot
+Käytin yfinance kirjastoa hakemaan osakkeiden viimeisimmät tiedot aina pelin alkaessa.
+
+-chatGPT keskustelu
+https://chat.openai.com/share/d30de320-4bea-4c2b-959a-12156133ff02 
